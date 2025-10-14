@@ -1782,7 +1782,7 @@ function shuaxinlb(zji)
 end
 shuaxinlb(true)
 
-local bailib = loadstring(game:HttpGet("https://pastebin.com/raw/nBq2D86q"))()
+local bailib = loadstring(game:HttpGet("https://raw.githubusercontent.com/LUOqingyan/-2/refs/heads/main/%E4%BB%BF%E7%99%BDUI.txt"))()
 local win = bailib:new("白--伐木大亨2", '')
 local Tab1 = win:Tab("玩家功能", "10882439086")
 local Section3 = Tab1:section("玩家", false)
@@ -5270,3 +5270,4 @@ Sectionautobuy6:Button("买鲨鱼", function()
         end)
     end);
 end)
+
