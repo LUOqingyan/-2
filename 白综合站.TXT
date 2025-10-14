@@ -659,7 +659,7 @@ local Section1 = Tab:section("功能")
 
     
         Section:Button("伐木大亨",function()    
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/LUOqingyan/-2/refs/heads/main/%E7%99%BD%E8%84%9A%E6%9C%AC%E4%BC%90%E6%9C%A8%E6%BA%90%E7%A0%81(1)%20(1).txt", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/LUOqingyan/-2/refs/heads/main/%E7%99%BD%E8%84%9A%E6%9C%AC%E4%BC%90%E6%9C%A8%E6%BA%90.txt", true))()
     
     
     end)
