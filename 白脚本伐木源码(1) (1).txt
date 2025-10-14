@@ -1,67 +1,67 @@
 local gs = function(service)
-    return game:GetService(service)
-end
+返回游戏：GetService(服务)
+结束
 
-local lp = gs("Players").LocalPlayer
-local pos = lp.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
-local ME = game.Players.LocalPlayer.Character.HumanoidRootPart
-local Mouse = game:GetService('Players').LocalPlayer:GetMouse()
-local CurrentSlot = game.Players.LocalPlayer:WaitForChild("CurrentSaveSlot").Value
-local ScriptLoadOrSave = false
-local CurrentlySavingOrLoading = game.Players.LocalPlayer:WaitForChild("CurrentlySavingOrLoading")
-local mouse = game.Players.LocalPlayer:GetMouse()
-local bai = {
-    axedupe = false,
+本地lp=gs(“玩家”).LocalPlayer
+局部位置=lp.Chacter.HumanoidRootPart.CFrame+Vector3.new(0，5，0)
+本地ME=游戏。玩家。本地玩家。性格。HumanoidRootPart
+本地鼠标=游戏：GetService('玩家')本地玩家：GetMouse()
+本地CurrentSlot=游戏。本地玩家：WaitForChild("CurrentSaveSlot")。价值
+本地ScriptLoadOrSave=false
+本地当前保存或加载=游戏。players。LocalPlayer:WaitForChild("当前保存或加载")
+本地鼠标=game.Players.LocalPlayer:GetMouse()
+本地bai={
+axedupe=false，
     soltnumber = "1",
     waterwalk = false,
     awaysday = false,
     awaysdnight = false,
     nofog = false,
-    axeflying = false,
-    playernamedied = "",
-    tptree = "",
-    moneyaoumt = 1,
-    moneytoplayername = "",
-    donationRecipient = tostring(game.Players.LocalPlayer),
-    autodropae = false,
-    farAxeEquip = nil,
-    cuttreeselect = "Generic",
-    autofarm = false,
-    PlankToBlueprint = nil,
-    plankModel = nil,
-    blueprintModel = nil,
-    saymege = "",
-    autosay = false,
-    saymount = 1,
-    sayfast = false,
-    autofarm1 = false,
-    bringamount = 1,
-    bringtree = false,
-    dxmz = "",
-    color = 0,
+axeflying=false，
+playernameded=""，
+tptree=""，
+货币=1，
+moneytoplayername=""，
+捐赠接收者=t字符串(game.Players.LocalPlayer)，
+自吸=假，
+farAxeEquip=零，
+cuttreeselect="通用"，
+Autofarm=false，
+PlankToBlueprint=零，
+plankModel=零，
+蓝图模型=零，
+saymege=""，
+autosay=false，
+saymount=1，
+sayfast=false，
+autofarm1=false，
+带来量=1，
+bringtree=false，
+dxmz=""，
+color=0，
     0,
     0,
-    zlwjia = "",
-    mtwjia = nil,
-    zix = 1,
-    zlz = 3,
-    axeFling = nil,
-    itemtoopen = "",
-    openItem = nil,
-    car = nil,
-    load = false,
-    autobuyamount = 1,
-    autopick = false,
-    loaddupeaxewaittime = 3.1,
-    walkspeed = 16,
-    JumpPower = 50,
-    pickupaxeamount = 1,
-    whthmose = false,
-    itemset = nil,
-    LoneCaveAxeDetection = nil,
-    cuttree = false,
-    LoneCaveCharacterAddedDetection = nil,
-    LoneCaveDeathDetection = nil,
+zlwjia=""，
+mtwjia=零，
+Zix=1，
+zlz=3，
+axeFling=零，
+itemtoopen=""，
+openItem=nil，
+car=零，
+负载=假，
+autobuymount=1，
+自动拾取=false，
+load dupeaxwaittime=3.1，
+步行速度=16，
+跳跃功率=50，
+pickaxeamount=1，
+whthmose=false，
+itemset=nil，
+LoneCaveAxeDetection=nil，
+cuttree=false，
+LoneCaveCharacterAddedDetection=nil，
+LoneCaveDeathDetection=nil，
     lovecavecutcframe = nil,
     lovecavepast = nil,
     zlmt = nil,
@@ -90,22 +90,7 @@ spawn(function()
         game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
             Color3.fromRGB(255, 0, 0)
         wait(1)
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text =
-            "白脚本牛逼,肥柑脚本垃圾"
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
-            Color3.fromRGB(255, 0, 0)
-        wait(1)
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text =
-            "白脚本VS肥柑"
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
-            Color3.fromRGB(255, 0, 0)
-        wait(1)
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text = "白脚本赢了"
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
-            Color3.fromRGB(255, 0, 0)
-        wait(1)
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text = "肥柑惨败"
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
+game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
             Color3.fromRGB(255, 0, 0)
         wait(1)
     end
@@ -5277,3 +5262,4 @@ Sectionautobuy6:Button("买鲨鱼", function()
         end)
     end);
 end)
+
