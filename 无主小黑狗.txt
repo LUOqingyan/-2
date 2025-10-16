@@ -445,7 +445,7 @@ end
         TabIco.BackgroundTransparency = 1.000
         TabIco.BorderSizePixel = 0
         TabIco.Size = UDim2.new(0, 24, 0, 24)
-        TabIco.Image = ("rbxassetid://%s"):format((icon or 89144654749015))
+        TabIco.Image = ("rbxassetid://%s"):format((icon or 132158547500212))
         TabIco.ImageTransparency = 0.2
         
         TabText.Name = "TabText"
