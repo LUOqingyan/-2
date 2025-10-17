@@ -84,33 +84,155 @@ local bai = {
     daiwp = false,
     stopcar = false
 }
-spawn(function()
-    while task.wait() do
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text = "白付费脚本"
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
-            Color3.fromRGB(255, 0, 0)
-        wait(1)
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text =
-            "白脚本复活"
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
-            Color3.fromRGB(255, 0, 0)
-        wait(1)
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text =
-            "复活作者小咪"
-        game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 =
-            Color3.fromRGB(255, 0, 0)
-        wait(1)
+local colorCycle = function()
+    local colors = {
+        Color3.fromRGB(255, 0, 0),    -- 红色
+        Color3.fromRGB(0, 255, 0),    -- 绿色
+        Color3.fromRGB(0, 0, 255),    -- 蓝色
+        Color3.fromRGB(255, 255, 0),  -- 黄色
+        Color3.fromRGB(255, 0, 255),  -- 紫色
+        Color3.fromRGB(0, 255, 255),  -- 青色
+        Color3.fromRGB(255, 165, 0)   -- 橙色
+    }
+    local currentIndex = 1
+    
+    return function()
+        local color = colors[currentIndex]
+        currentIndex = currentIndex + 1
+        if currentIndex > #colors then
+            currentIndex = 1
+        end
+        return color
+    end
+end
 
+local getNextColor = colorCycle()
+
+-- 彩色循环标题更新函数
+local function updateColoredTitles()
+    spawn(function()
+        while task.wait(0.3) do
+            local nextColor = getNextColor()
+            
+            -- 更新主窗口标题
+            if win and win.Title then
+                win.Title.TextColor3 = nextColor
+            end
+            
+            -- 更新Tab标题
+            if Tab1 and Tab1.Title then
+                Tab1.Title.TextColor3 = nextColor
+            end
+            if Tab and Tab.Title then
+                Tab.Title.TextColor3 = nextColor
+            end
+            if Tab2 and Tab2.Title then
+                Tab2.Title.TextColor3 = nextColor
+            end
+            if Tab4 and Tab4.Title then
+                Tab4.Title.TextColor3 = nextColor
+            end
+            if Tab5 and Tab5.Title then
+                Tab5.Title.TextColor3 = nextColor
+            end
+            
+            -- 更新Section标题
+            
+            if Section1 and Section1.Title then
+                Section1.Title.TextColor3 = nextColor
+            end
+            if Section2 and Section2.Title then
+                Section2.Title.TextColor3 = nextColor
+            end
+            if Section3 and Section3.Title then
+                Section3.Title.TextColor3 = nextColor
+            end
+            if Section4 and Section4.Title then
+                Section4.Title.TextColor3 = nextColor
+            end
+            -- 继续添加其他Section...
+        end
+    end)
+end
+
+-- 修改功能名称显示为彩色
+local function createColoredButton(section, text, callback)
+    local button = section:Button(text, callback)
+    
+    -- 为按钮添加颜色循环效果
+    spawn(function()
+        local buttonText = button.TextLabel -- 可能需要根据UI库结构调整
+        if buttonText then
+            while task.wait(0.3) do
+                buttonText.TextColor3 = getNextColor()
+            end
+        end
+    end)
+    
+    return button
+end
+
+-- 修改商店招牌文字为彩色循环
+spawn(function()
+    local shopColors = {
+        Color3.fromRGB(255, 0, 0),    -- 红
+        Color3.fromRGB(0, 255, 0),    -- 绿  
+        Color3.fromRGB(0, 0, 255),    -- 蓝
+        Color3.fromRGB(255, 255, 0),  -- 黄
+        Color3.fromRGB(255, 0, 255),  -- 紫
+    }
+    local colorIndex = 1
+    
+    while task.wait(0.2) do
+        local currentColor = shopColors[colorIndex]
+        
+        -- 更新商店招牌
+               game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text = "白付费脚本"
+                game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 = currentColor
+                game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text =
+            "白脚本复活"
+                game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 = currentColor
+                game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.Text =
+            "复活作者小咪"
+                game:GetService("Workspace").Stores.WoodRUs.Parts.PREMIUMSELECTION.SurfaceGui.TextLabel.TextColor3 = currentColor
+                game:GetService("Workspace").Stores.WoodRUs.Parts.OPEN24HOURS.SurfaceGui.TextLabel.Text = "作者: 阿巴巴";
+                game:GetService("Workspace").Stores.WoodRUs.Parts.OPEN24HOURS.SurfaceGui.TextLabel.TextColor3 = currentColor
+                game:GetService("Workspace").Stores.WoodRUs.Parts.SELLWOOD.SurfaceGui.TextLabel.Text = "作者: 修狗";
+                game:GetService("Workspace").Stores.WoodRUs.Parts.SELLWOOD.SurfaceGui.TextLabel.TextColor3 = currentColor
+                game:GetService("Workspace").Stores.WoodRUs.Parts.WOODDROPOFF.SurfaceGui.TextLabel.Text = "感谢使用白";
+                game:GetService("Workspace").Stores.WoodRUs.Parts.WOODDROPOFF.SurfaceGui.TextLabel.TextColor3 = currentColor
+                
+        colorIndex = colorIndex + 1
+        if colorIndex > #shopColors then
+            colorIndex = 1
+        end
     end
 end)
-game:GetService("Workspace").Stores.WoodRUs.Parts.OPEN24HOURS.SurfaceGui.TextLabel.Text = "作者: 阿巴巴";
-game:GetService("Workspace").Stores.WoodRUs.Parts.OPEN24HOURS.SurfaceGui.TextLabel.TextColor3 =
-    Color3.fromRGB(255, 0, 0)
-game:GetService("Workspace").Stores.WoodRUs.Parts.SELLWOOD.SurfaceGui.TextLabel.Text = "作者: 修狗";
-game:GetService("Workspace").Stores.WoodRUs.Parts.SELLWOOD.SurfaceGui.TextLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
-game:GetService("Workspace").Stores.WoodRUs.Parts.WOODDROPOFF.SurfaceGui.TextLabel.Text = "感谢使用白";
-game:GetService("Workspace").Stores.WoodRUs.Parts.WOODDROPOFF.SurfaceGui.TextLabel.TextColor3 =
-    Color3.fromRGB(255, 0, 0)
+
+-- 修改通知函数为彩色
+local originalNotify = notify
+notify = function(title, message, duration)
+    local coloredTitle = "🌈 " .. title .. " 🌈"
+    originalNotify(coloredTitle, message, duration)
+end
+
+
+
+
+
+-- 在UI创建后启动颜色循环
+spawn(function()
+    wait(2) -- 等待UI加载完成
+    updateColoredTitles()
+end)
+
+
+
+
+
+
+
+
 
 local Player = game.Players.LocalPlayer
 
@@ -1782,7 +1904,7 @@ function shuaxinlb(zji)
 end
 shuaxinlb(true)
 
-local bailib = loadstring(game:HttpGet("https://raw.githubusercontent.com/LUOqingyan/-2/refs/heads/main/%E4%BB%BF%E7%99%BDUI.txt"))()
+local bailib = loadstring(game:HttpGet("https://raw.githubusercontent.com/LUOqingyan/-2/refs/heads/main/%E4%BB%BF%E7%99%BD%E6%9B%B4%E6%94%B9.txt"))()
 local win = bailib:new("白--伐木大亨2", '')
 local Tab1 = win:Tab("玩家功能", "10882439086")
 local Section3 = Tab1:section("玩家", false)
@@ -5270,4 +5392,3 @@ Sectionautobuy6:Button("买鲨鱼", function()
         end)
     end);
 end)
-
