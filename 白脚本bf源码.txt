@@ -1,4 +1,4 @@
-local bai={
+1local bai={
     autofram=false,
     SelectToolWeapon=nil,
     fastacttack=false,
